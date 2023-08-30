@@ -21,10 +21,10 @@ spec:
       source:
         repoURL: 'https://github.com/{{ $.Values.githubOrg | default $.Release.Name }}/{{ . }}'
         targetRevision: 'HEAD'
-        path: '{{`{{path}}`}}'
+        #path: '{{`{{path}}`}}'
         ## Rendered manifests.
         # targetRevision: '{{`{{path}}`}}'
-        # path: './'
+        path: './'
       destination:
         name: '{{ $.Values.cluster }}'
         namespace: '{{ $.Release.Name }}-{{`{{path.basename}}`}}'
